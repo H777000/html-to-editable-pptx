@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "esbuild src/browser-entry.js --bundle --platform=browser --format=iife --outfile=dist/browser.js --define:process.env.NODE_ENV='\"production\"'",
+    "prepare": "npm run build",
     "demo": "node demo/server.cjs",
     "convert:example": "node bin/convert.cjs examples/gradient-slide.html --output examples/gradient-slide.pptx --chrome /usr/bin/google-chrome",
     "benchmark": "node benchmarks/run.cjs"

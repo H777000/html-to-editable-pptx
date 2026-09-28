@@ -1,0 +1,62 @@
+[
+  {
+    "sample": "gradient-slide",
+    "mine": {
+      "mae": 7.96,
+      "objects": {
+        "shapes": 17,
+        "pictures": 3,
+        "textRuns": 14
+      },
+      "report": {
+        "page": 1,
+        "nativeVisualCount": 5,
+        "editableTextCount": 14,
+        "rasterizedVisualCount": 2,
+        "visualFallback": false,
+        "fallbackReasons": [
+          "browser-composed-decoration",
+          "complex-css"
+        ]
+      }
+    },
+    "rival": {
+      "mae": 161.56,
+      "objects": {
+        "shapes": 15,
+        "pictures": 1,
+        "textRuns": 13
+      }
+    }
+  },
+  {
+    "sample": "light-slide",
+    "mine": {
+      "mae": 5.66,
+      "objects": {
+        "shapes": 20,
+        "pictures": 4,
+        "textRuns": 16
+      },
+      "report": {
+        "page": 1,
+        "nativeVisualCount": 7,
+        "editableTextCount": 16,
+        "rasterizedVisualCount": 4,
+        "visualFallback": false,
+        "fallbackReasons": [
+          "browser-composed-decoration",
+          "compact-decorated-text"
+        ]
+      }
+    },
+    "rival": {
+      "mae": 4.38,
+      "objects": {
+        "shapes": 21,
+        "pictures": 0,
+        "textRuns": 16
+      }
+    }
+  }
+]

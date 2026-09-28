@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>HTML to editable PPTX demo</title>
+<style>
+  body{margin:0;padding:32px;background:#0d1424;color:white;font:16px system-ui,sans-serif;max-width:1160px;margin:auto}
+  h1{margin:0 0 8px}p{color:#b8c5d9}button{background:#5e84ff;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:700;cursor:pointer}button:disabled{opacity:.5}
+  iframe{width:100%;aspect-ratio:16/9;border:1px solid #405178;border-radius:12px;background:white}
+  #status{min-height:2em}
+</style>
+<h1>HTML → editable PPTX</h1><p>Preview the HTML, export, then open the PPTX to edit text and shapes.</p>
+<button id="export">Download PPTX</button><p id="status"></p>
+<iframe title="Original HTML slide" src="/examples/gradient-slide.html"></iframe>
+<script src="/dist/browser.js"></script>
+<script>
+  const button=document.querySelector('#export'),status=document.querySelector('#status');
+  button.onclick=async()=>{button.disabled=true;status.textContent='Converting…';try{
+    const html=await (await fetch('/examples/gradient-slide.html')).text();
+    const result=await HtmlToEditablePptx.convert(html,'gradient-slide.pptx');
+    const url=URL.createObjectURL(result.blob);const link=document.createElement('a');link.href=url;link.download='gradient-slide.pptx';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const r=result.slideReports[0];status.textContent=`Done: ${r.editableTextCount} editable text boxes, ${r.nativeVisualCount} mapped visual elements, ${r.rasterizedVisualCount} rasterized visual elements.`;
+  }catch(e){status.textContent='Export failed: '+e.message}finally{button.disabled=false}};
+</script>
+</html>

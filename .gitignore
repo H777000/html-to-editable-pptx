@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.pptx
+*.pdf
+.DS_Store
+
+benchmarks/output/
+!docs/media/*.pptx

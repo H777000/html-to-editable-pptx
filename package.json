@@ -1,0 +1,46 @@
+{
+  "name": "html-to-editable-pptx",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Convert HTML slides to editable PowerPoint files",
+  "bin": {
+    "html-to-editable-pptx": "bin/convert.cjs"
+  },
+  "scripts": {
+    "build": "esbuild src/browser-entry.js --bundle --platform=browser --format=iife --outfile=dist/browser.js --define:process.env.NODE_ENV='\"production\"'",
+    "demo": "node demo/server.cjs",
+    "convert:example": "node bin/convert.cjs examples/gradient-slide.html --output examples/gradient-slide.pptx --chrome /usr/bin/google-chrome",
+    "benchmark": "node benchmarks/run.cjs"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "0.9.12",
+    "html-to-image": "1.11.13",
+    "jszip": "3.10.1",
+    "pptxgenjs": "3.12.0",
+    "puppeteer-core": "^24.0.0"
+  },
+  "devDependencies": {
+    "dom-to-pptx": "^2.1.2",
+    "esbuild": "0.28.2",
+    "pngjs": "^7.0.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "constants.js",
+    "dist/",
+    "src/",
+    "demo/",
+    "examples/*.html",
+    "docs/README.zh-CN.md",
+    "docs/EDITABILITY.md",
+    "docs/media/benchmark-comparison.png",
+    "docs/media/editability-proof.mp4",
+    "benchmarks/README.md",
+    "benchmarks/public-metrics.json",
+    "README.md"
+  ]
+}

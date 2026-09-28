@@ -1,0 +1,31 @@
+export const AI_PPT_EXPORT_LAYOUT = {
+    SLIDE_PIXEL_WIDTH: 1280,
+    SLIDE_PIXEL_HEIGHT: 720,
+    PPT_WIDTH_IN: 10,
+    PPT_HEIGHT_IN: 5.625,
+    BACKGROUND_PIXEL_RATIO: 2,
+    EXPORT_FRAME_ID: 'ai-ppt-html-export-frame',
+    MIN_FONT_SIZE_PT: 6,
+    FONT_SIZE_SCALE: 0.88,
+    MULTILINE_HEIGHT_FACTOR: 1.6,
+    SINGLE_LINE_WIDTH_FACTOR: 1.18,
+    MULTILINE_WIDTH_FACTOR: 1.06,
+    SINGLE_LINE_PAD_IN: 0.12,
+    MULTILINE_PAD_IN: 0.2,
+};
+
+export const AI_PPT_EXPORT_FONT_MAP = {
+    'Noto Sans SC': 'Microsoft YaHei',
+    'Noto Sans CJK SC': 'Microsoft YaHei',
+    'Noto Serif SC': 'SimSun',
+    'Noto Serif CJK SC': 'SimSun',
+    'Source Han Sans': 'Microsoft YaHei',
+    'Source Han Sans SC': 'Microsoft YaHei',
+    'Source Han Serif': 'SimSun',
+    'Source Han Serif SC': 'SimSun',
+    'PingFang SC': 'Microsoft YaHei',
+    Inter: 'Calibri',
+    Roboto: 'Calibri',
+    'Helvetica Neue': 'Helvetica',
+    Arial: 'Arial',
+};
